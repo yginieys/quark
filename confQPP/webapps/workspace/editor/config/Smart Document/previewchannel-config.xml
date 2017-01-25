@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<!DOCTYPE configuration [
+	<!ELEMENT channels (Channel?)>
+	<!ELEMENT Channel (#PCDATA)>
+	<!ATTLIST Channel
+		id CDATA #REQUIRED
+		displayName CDATA #REQUIRED
+		outputFormat (IMAGE_ARCHIVE | HTML_ARCHIVE | PDF_ARCHIVE) #REQUIRED
+		downloadChannel CDATA #IMPLIED
+	>
+]> -->
+<Channels>
+	<!--
+	<Channel>
+	  * id - ID of publishing channel, as defined in platform server, to be used for rendering preview.
+	  * displayName - (optional) Multi-channel combo item name in the UI. If not given, then outputFormat is used
+	  * outputFormat - Specifies the file type of output produced by the render channel. Can have following values:
+		  IMAGE_ARCHIVE - An archive of images as the published output. Each image in the archive will will be rendered within a web page
+	      HTML_ARCHIVE - An HTML archive as the published output, which will be rendered as is, using the file named 'index.html' present in the HTML Archive.
+	      PDF_ARCHIVE - The published output is PDF, which will be rendered within a web IFrame. Browser's PDF addin/plugin/extension will be invoked for rendering the output PDF.
+	  * downloadChannel - (optional) Used in case a different channel needs to be invoked for download of preview using the channel.
+	-->
+	<Channel displayName="SPIE IMAGE" outputFormat="IMAGE_ARCHIVE" id="spieJpeg"/>
+	<Channel displayName="SPIE PDF" outputFormat="PDF_ARCHIVE" id="spiePdf" downloadChannel="spiePdf"/>
+
+	<Channel displayName="IMAGE" outputFormat="IMAGE_ARCHIVE" id="smartDocJpeg"/>
+	<Channel displayName="Responsive HTML5"  outputFormat="HTML_ARCHIVE"  id="smartDocHtml" downloadChannel="smartDocHtml"/>
+	<Channel displayName="HTML5 Publication"  outputFormat="HTML_ARCHIVE"  id="smartDocHtml5Publication" downloadChannel="smartDocHtml5Publication"/>
+	<Channel displayName="PDF" outputFormat="PDF_ARCHIVE" id="smartDocPdf" downloadChannel="smartDocPdf"/>
+</Channels>

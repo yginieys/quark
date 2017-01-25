@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ChannelConfig [
+	<!ELEMENT ChannelConfig (channel*, content-type*, import*)>
+	<!ELEMENT channel (param*)>
+	<!ATTLIST channel
+		id CDATA #REQUIRED
+		name CDATA #REQUIRED
+		type (publish | deliver | datadoc) "publish"
+		publishingProcess CDATA #REQUIRED
+	>
+	<!ELEMENT param (#PCDATA)>
+	<!ATTLIST param
+		name CDATA #REQUIRED
+		ask (true | false) "false"
+	>
+	<!ELEMENT import (#PCDATA)>
+	<!ATTLIST import
+		resource CDATA #REQUIRED
+	>
+]>
+<ChannelConfig>
+
+<!-- Add custom channels definitions-->
+
+<!-- For Example:
+	<channel id="researchReportPdf" name="ResearchReport.PDF"	publishingProcess="ResearchReportProcess" type="publish">
+		<param name="XSL_URI" ask="true">classpath:BusDoc2QXPS.xslt</param>
+		<param name="QXP_TEMPLATE_URI" ask="true">classpath:BLTEMP.qxp</param>
+		...
+	</channel>
+-->	
+<channel id="spiePdf" name="QXP.PDF" publishingProcess="smartDocToQxpRenderer" type="publish">
+		<param name="ASSET_ID" ask="true"/>
+		<param name="XSL_URI" ask="true">classpath:SPIE2/SmartDoc2QXPS.xslt</param>
+		<param name="QXP_TEMPLATE_URI" ask="true">classpath:SPIE2/SPIE_template_2015.qxp</param>
+		<param name="RENDER_FORMAT">PDF</param>
+		<param name="EXCEL_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="CHART_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="VISIO_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="MATH_EQUATION_IMAGE_FORMAT">PDF</param><!-- Supported image formats are PDF, SVG, PNG, SWF and EPS -->
+		<param name="POWERPOINT_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="ANNOTATE_ERRORS">true</param>
+		<param name="APPEND_ERRORS">true</param>
+		<param name="OUTPUT_STYLE" ask="true">Default PDF Output Style</param>
+		<param name="TRACKED_CHANGES" ask="true">ACCEPT</param>	<!-- For accepting or rejecting tracking changes -->
+		<param name="RESOLVE_QPP_RELATIONS" ask="true">true</param>
+	</channel>
+	<channel id="spieJpeg" name="QXP.JPEG.ZIP" publishingProcess="smartDocToQxpRenderer" type="publish">
+		<param name="ASSET_ID" ask="true"/>
+		<param name="LAYOUT" ask="true"/>
+		<param name="BOX" ask="true"/>
+		<param name="SCALE" ask="true"/>
+		<param name="XSL_URI" ask="true">classpath:SPIE2/SmartDoc2QXPS.xslt</param>
+		<param name="QXP_TEMPLATE_URI" ask="true">classpath:SPIE2/SPIE_template_2015.qxp</param>
+		<param name="RENDER_FORMAT">JPEG</param>
+		<param name="EXCEL_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="CHART_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="VISIO_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="POWERPOINT_DATA_IMAGE_FORMAT" ask="true">PDF</param>
+		<param name="MATH_EQUATION_IMAGE_FORMAT">PDF</param><!-- Supported image formats are PDF, SVG, PNG, SWF and EPS -->
+		<param name="ANNOTATE_ERRORS">true</param>
+		<param name="APPEND_ERRORS">true</param>
+		<param name="TRACKED_CHANGES" ask="true">ACCEPT</param>	<!-- For accepting or rejecting tracking changes -->
+		<param name="MAX_PAGES">0</param> <!-- Maximum number of pages to be published. Value 0 means  all pages-->
+		<param name="RESOLVE_QPP_RELATIONS" ask="true">true</param>
+	</channel>
+	
+</ChannelConfig>
+
