@@ -70,9 +70,6 @@
 				<MASTERPAGESEQUENCE NAME="securite">
 					<SINGLEMASTERPAGEREFERENCE NAME="A-Master A"/>
 				</MASTERPAGESEQUENCE>
-				<MASTERPAGESEQUENCE NAME="competences">
-					<SINGLEMASTERPAGEREFERENCE NAME="A-Master A"/>
-				</MASTERPAGESEQUENCE>
 				<MASTERPAGESEQUENCE NAME="CONTENT">
 					<REPEATABLEMASTERPAGEALTERNATIVES>
 						<CONDITIONALMASTERPAGEREFERENCE NAME="A-Master A" POSITION="FIRST"/>
@@ -645,21 +642,48 @@
 						</INLINETABLE>
 					</STORY>
 				</PAGESEQUENCE>
-
-				<PAGESEQUENCE MASTERREFERENCE="competences">
-                    <xsl:element name="SECTIONNUMBERFORMAT">
-                        <xsl:attribute name="INITIALPAGENUMBER" select="2"/>
-                        <xsl:attribute name="FORMAT" select="'NUMERIC'"/>
-                    </xsl:element>
-                    <xsl:variable name="CAT1A" select="/section//body/region//li/p='CAT 1A'"/>
-                    <xsl:variable name="CAT2A" select="/section//body/region//li/p='CAT 2A'"/>
-                    <xsl:variable name="CAT3A" select="/section//body/region//li/p='CAT 3A'"/>
-                    <xsl:variable name="CAT1B" select="/section//body/region//li/p='CAT 1B'"/>
-                    <xsl:variable name="CAT2B" select="/section//body/region//li/p='CAT 2B'"/>
-                    <xsl:variable name="CAT3B" select="/section//body/region//li/p='CAT 3B'"/>
-                    <xsl:variable name="HIGHTLIGH_COLOR" select="'spie green'"/>
-                    <xsl:variable name="HIGHTLIGH_SHADE" select="'50'"/>
-					<STATICCONTENT>
+				
+				<PAGESEQUENCE MASTERREFERENCE="CONTENT">
+					<xsl:element name="SECTIONNUMBERFORMAT">
+						<xsl:attribute name="INITIALPAGENUMBER">1</xsl:attribute>
+						<xsl:attribute name="FORMAT">NUMERIC</xsl:attribute>
+					</xsl:element>
+					<xsl:element name="STATICCONTENT">
+						<xsl:element name="BOX">
+							<xsl:element name="ID">
+								<xsl:attribute name="NAME" select="'pageheader'"/>
+							</xsl:element>
+							<xsl:element name="TEXT">
+								<xsl:element name="STORY">
+									<xsl:apply-templates select="/section/title" mode="section">
+										<xsl:with-param name="nostyle" select="true()"/>
+										<xsl:with-param name="flowcontent" select="false()"/>
+										<xsl:with-param name="merge" select="true()"/>										
+									</xsl:apply-templates>
+								</xsl:element>
+							</xsl:element>
+						</xsl:element>
+						<xsl:if test="exists($assetattributes/*[local-name() = 'assetInfo'])">
+						<xsl:if test="contains(($assetattributes//*[@name = 'Status']), 'Draft')">
+							<xsl:element name="BOX">
+								<xsl:element name="ID">
+									<xsl:attribute name="NAME" select="'watermark*'"/>
+								</xsl:element>
+								<xsl:element name="TEXT">
+									<xsl:element name="STORY">
+										<xsl:attribute name="FITTEXTTOBOX" select="'true'"/>
+										<xsl:element name="PARAGRAPH">
+											<xsl:attribute name="MERGE"><xsl:value-of select="'TRUE'"></xsl:value-of></xsl:attribute>
+											<xsl:element name="RICHTEXT">
+												<xsl:attribute name="BOLD" select="'true'"/>
+												<xsl:value-of select="$assetattributes//*[@name = 'Status']"/>
+											</xsl:element>
+										</xsl:element>
+									</xsl:element>
+								</xsl:element>
+							</xsl:element>
+						</xsl:if>
+						</xsl:if>
 						<BOX>
 							<ID NAME="header_title"/>
 							<TEXT>
@@ -670,12 +694,37 @@
 								</STORY>
 							</TEXT>
 						</BOX>
-					</STATICCONTENT>
-					<STORY>
-						<PARAGRAPH PARASTYLE="section_heading">
-							<RICHTEXT>Compétences Habilitations, CACES</RICHTEXT>
-						</PARAGRAPH>
-						<INLINETABLE TABLESTYLEREF="nogrid" BREAKROWACROSSPAGES="TRUE">
+					</xsl:element>
+					<STORY BOXNAME="automatictextbox">
+						<xsl:for-each select="/section/section">
+							<xsl:variable name="vPos" select="position()"/>
+							<xsl:choose>
+								<xsl:when test="$vPos = 1">
+								</xsl:when>
+								<xsl:when test="$vPos &gt; 1">
+									<xsl:apply-templates select="." mode="section"/>
+								</xsl:when>
+							</xsl:choose>
+						</xsl:for-each>
+						<!--<xsl:apply-templates mode="section"/>-->	
+					</STORY>
+				</PAGESEQUENCE>
+				
+			</LAYOUT>
+		</PROJECT>
+	</xsl:template>
+
+	<xsl:template match="region[@type='box']/ul" mode="section">
+		<xsl:variable name="CAT1A" select="li/p='CAT 1A'"/>
+                    <xsl:variable name="CAT2A" select="li/p='CAT 2A'"/>
+                    <xsl:variable name="CAT3A" select="li/p='CAT 3A'"/>
+                    <xsl:variable name="CAT1B" select="li/p='CAT 1B'"/>
+                    <xsl:variable name="CAT2B" select="li/p='CAT 2B'"/>
+                    <xsl:variable name="CAT3B" select="li/p='CAT 3B'"/>
+                    <xsl:variable name="HIGHTLIGH_COLOR" select="'spie green'"/>
+                    <xsl:variable name="HIGHTLIGH_SHADE" select="'50'"/>
+        <PARAGRAPH>
+		<INLINETABLE TABLESTYLEREF="nogrid" BREAKROWACROSSPAGES="TRUE">
 							<COLGROUP>
 								<TCOL COLINDEX="1" WIDTH="16%"/>
 								<TCOL COLINDEX="2" WIDTH="16%"/>
@@ -929,80 +978,7 @@
 								</TROW>
 							</TBODY>
 						</INLINETABLE>
-					</STORY>
-				</PAGESEQUENCE>
-				
-				
-				<PAGESEQUENCE MASTERREFERENCE="CONTENT">
-					<xsl:element name="SECTIONNUMBERFORMAT">
-						<xsl:attribute name="INITIALPAGENUMBER">1</xsl:attribute>
-						<xsl:attribute name="FORMAT">NUMERIC</xsl:attribute>
-					</xsl:element>
-					<xsl:element name="STATICCONTENT">
-						<xsl:element name="BOX">
-							<xsl:element name="ID">
-								<xsl:attribute name="NAME" select="'pageheader'"/>
-							</xsl:element>
-							<xsl:element name="TEXT">
-								<xsl:element name="STORY">
-									<xsl:apply-templates select="/section/title" mode="section">
-										<xsl:with-param name="nostyle" select="true()"/>
-										<xsl:with-param name="flowcontent" select="false()"/>
-										<xsl:with-param name="merge" select="true()"/>										
-									</xsl:apply-templates>
-								</xsl:element>
-							</xsl:element>
-						</xsl:element>
-						<xsl:if test="exists($assetattributes/*[local-name() = 'assetInfo'])">
-						<xsl:if test="contains(($assetattributes//*[@name = 'Status']), 'Draft')">
-							<xsl:element name="BOX">
-								<xsl:element name="ID">
-									<xsl:attribute name="NAME" select="'watermark*'"/>
-								</xsl:element>
-								<xsl:element name="TEXT">
-									<xsl:element name="STORY">
-										<xsl:attribute name="FITTEXTTOBOX" select="'true'"/>
-										<xsl:element name="PARAGRAPH">
-											<xsl:attribute name="MERGE"><xsl:value-of select="'TRUE'"></xsl:value-of></xsl:attribute>
-											<xsl:element name="RICHTEXT">
-												<xsl:attribute name="BOLD" select="'true'"/>
-												<xsl:value-of select="$assetattributes//*[@name = 'Status']"/>
-											</xsl:element>
-										</xsl:element>
-									</xsl:element>
-								</xsl:element>
-							</xsl:element>
-						</xsl:if>
-						</xsl:if>
-						<BOX>
-							<ID NAME="header_title"/>
-							<TEXT>
-								<STORY>
-									<PARAGRAPH PARASTYLE="Header Title">
-										<RICHTEXT><xsl:value-of select="/section/title"/></RICHTEXT>
-									</PARAGRAPH>
-								</STORY>
-							</TEXT>
-						</BOX>
-					</xsl:element>
-					<STORY BOXNAME="automatictextbox">
-						<xsl:for-each select="/section/section">
-							<xsl:variable name="vPos" select="position()"/>
-							<xsl:choose>
-								<xsl:when test="$vPos = 1">
-								</xsl:when>
-								<xsl:when test="$vPos &gt; 1">
-									<xsl:apply-templates select="." mode="section"/>
-								</xsl:when>
-							</xsl:choose>
-						</xsl:for-each>
-						<!--<xsl:apply-templates mode="section"/>-->	
-					</STORY>
-				</PAGESEQUENCE>
-				
-			</LAYOUT>
-		</PROJECT>
+					</PARAGRAPH>
 	</xsl:template>
-
 	
 </xsl:stylesheet>
