@@ -647,6 +647,8 @@
 				</PAGESEQUENCE>
 
 				<PAGESEQUENCE MASTERREFERENCE="competences">
+					<!-- adding comment as this is where we must test for the bullets... -->
+					<!-- YG: 201701251500: il faudrait ajouté le tableau que si le XML contient la liste à puce pour les nacelles  -->
                     <xsl:element name="SECTIONNUMBERFORMAT">
                         <xsl:attribute name="INITIALPAGENUMBER" select="2"/>
                         <xsl:attribute name="FORMAT" select="'NUMERIC'"/>
