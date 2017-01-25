@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><?Xpress productline="smartdoc"?>
+<section xmlns="http://quark.com/smartcontent/3.0" id="_bf5f90af-24d4-4b20-957e-6b507f4ece22" type="document">
+<title>L6-COMPRESSEUR D'AIR FIXE-MP-CPT</title>
+
+<body><p><t>&#160;</t></p><p><t>COMPRESSEUR</t></p><p><t><image cx="" cy="" href="qpp://assets/118"/></t></p></body>
+
+<section id="_87cadd6e-cd5a-4bed-a7cd-e1409d159e7d" type="section">
+<title>SECTION Sécurité</title>
+
+<body><p><t>Section Body</t></p></body>
+
+<section id="_5825c0ab-6b99-494b-b50f-09075edb6c93" type="subsection">
+<title>Sub-Section Title</title>
+
+<body><p><t>AMIANTF</t></p><p><t>CHIMIQU</t></p><p><t>&#160;</t></p></body>
+</section>
+</section>
+
+<section id="_566b2714-5867-456a-bfcb-3fc966482354" type="section">
+<title>Sécurité spécifique SNCF</title>
+
+<body><table id="_c4db3bbc-6015-45af-a55f-8b51a1758d44"><tgroup cols="3"><colspec colname="1" colnum="1" colwidth="144.67px"/><colspec colname="2" colnum="2" colwidth="144.67px"/><colspec colname="3" colnum="3" colwidth="144.67px"/><tbody><row>
+<entry><p><t>SANS</t></p></entry>
+<entry><p><t>&#160;</t></p></entry>
+<entry><p><t>&#160;</t></p></entry>
+</row></tbody></tgroup></table></body>
+</section>
+
+<section id="_e04f0efc-3603-4828-860c-7f761f6a756e" type="section">
+<title>Compétences Habilitations, CACES</title>
+
+<body><p><t>MERCI DE VOUS MUNIR DE VOTRE TITRE D’HABILITATION</t></p><region id="_19158775-14c3-410c-bdbf-e4cf10c8b9c7" type="box">
+<p><t>HABILITATION ELECTRIQUE</t></p>
+</region><region id="_dc99713f-a5ab-42ac-82d4-134cd4aa9f29" type="box">
+<p type="region-title"><t>CACES NACELLES</t></p>
+
+<ul>
+<li><p><t>CAT 1A</t></p></li>
+<li><p><t>CAT 3A</t></p></li>
+<li><p><t>CAT 1B</t></p></li>
+</ul>
+</region><region id="_e3727402-a297-4d19-939e-45e05cba0893" type="box">
+<p><t>CACES CHARIOTS</t></p>
+</region><region id="_0b81763d-7e29-4ffa-a81e-c2c5160762b2" type="box">
+<p><t>AUTRES FORMATIONS</t></p>
+</region></body>
+</section>
+
+<section id="_9147421e-2115-4489-9507-7767b4e77022" type="section">
+<title>Outillages spécifiques</title>
+
+<body><ul>
+<li><p><t>Brau, entonoir, clés à molettes, tuyau+vanne de pressurisation, tuyau+vanne de vidange,</t></p></li>
+</ul></body>
+</section>
+
+<section id="_3d6bec56-a4d4-450a-abe7-c52bb066f943" type="section">
+<title>Documents associés, notices constructeurs</title>
+
+<body><p><t>&#160;</t></p><ul>
+<li><p><t>Référentiel :</t></p></li>
+<li><p><t>Document constructeurs : Notice d’entretien KAESER</t></p></li>
+</ul></body>
+</section>
+
+<section id="_36111c40-ed1f-4845-8f4f-68655145d21d" type="section">
+<title>Consommables, produits</title>
+
+<body><table id="_f8a8dac1-910f-4f47-88b7-817428a89c68"><tgroup cols="4"><colspec colname="1" colnum="1" colwidth="100.25px"/><colspec colname="2" colnum="2" colwidth="100.25px"/><colspec colname="3" colnum="3" colwidth="100.25px"/><colspec colname="4" colnum="4" colwidth="100.25px"/><thead><row>
+<entry><p><t>N° PDR</t></p></entry>
+<entry><p><t>Désignation</t></p></entry>
+<entry><p><t>Référence</t></p></entry>
+<entry><p><t>Qté</t></p></entry>
+</row></thead><tbody><row>
+<entry><p><t>&#160;</t></p></entry>
+<entry><p><t>Graisse roulement températures élevées</t></p></entry>
+<entry><p><t>SKF LGHP2/0.4</t></p></entry>
+<entry><p><t>1 cartouche</t></p></entry>
+</row><row>
+<entry><p><t>&#160;</t></p></entry>
+<entry><p><t>Huile compresseur SIGMA FLUID MOL</t></p></entry>
+<entry><p><t>Kaeser : 9.0920.0</t></p></entry>
+<entry><p><t>26 L / compresseur</t></p></entry>
+</row></tbody></tgroup></table><p><t>&#160;</t></p></body>
+</section>
+
+<section id="_5f139127-b3dd-41e6-8964-196847e8f5b8" type="section">
+<title>Pièces de rechanges</title>
+</section>
+
+<section id="_e0b790f4-88e4-4c3a-9c8d-36b9cc1288e6" type="section">
+<title>Lieu de maintenance</title>
+
+<body><p><t>Section Body</t></p></body>
+</section>
+</section>
