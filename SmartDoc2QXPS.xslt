@@ -358,7 +358,7 @@
 						<PARAGRAPH PARASTYLE="section_heading">
 							<RICHTEXT>Sécurité</RICHTEXT>
 						</PARAGRAPH>
-						<INLINETABLE TABLESTYLEREF="inline" BREAKROWACROSSPAGES="TRUE">
+					<INLINETABLE TABLESTYLEREF="inline" BREAKROWACROSSPAGES="TRUE">
 							<COLGROUP>
 								<TCOL COLINDEX="1" WIDTH="12%"/>
 								<TCOL COLINDEX="2" WIDTH="12%"/>
@@ -378,10 +378,9 @@
 									</ENTRY>
 								</TROW>
 								<TROW>
-									<!--<xsl:for-each select="1 to 8">-->
-									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
-											<ENTRY COLOR="spie green">
+										<xsl:choose>
+												<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'AMIANTE'">
+													<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT>AMIANTE</RICHTEXT>
 														</PARAGRAPH>
@@ -412,7 +411,7 @@
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'CHIMIQUE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'CHIMIQUE'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT>CHIMIQUE</RICHTEXT>
@@ -444,7 +443,7 @@
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'ELECTRIQUE'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT>ELECTRIQUE</RICHTEXT>
@@ -476,17 +475,17 @@
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'BASSE TEMPERATURE'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>BASSE TEMPERATURE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_basse_temperature.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
@@ -494,31 +493,31 @@
 												<xsl:otherwise>
 													<ENTRY COLOR="white">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>BASSE TEMPERATURE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_basse_temperature.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'LASER'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>LASER</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_laser.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
@@ -526,31 +525,31 @@
 												<xsl:otherwise>
 													<ENTRY COLOR="white">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>LASER</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_laser.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'HAUTE TEMPERATURE'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>HAUTE TEMERATURE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_haute_temperature.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
@@ -558,31 +557,31 @@
 												<xsl:otherwise>
 													<ENTRY COLOR="white">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>HAUTE TEMERATURE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_haute_temperature.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
 												</xsl:otherwise>
 									</xsl:choose>
 									<xsl:choose>
-										<xsl:when test="/section/section[1]/section[1]/body/p = 'AMIANTE'">
+										<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'ECRASEMENT'">
 											<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>ECRASEMENT</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_ecrasement.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
@@ -590,31 +589,31 @@
 												<xsl:otherwise>
 													<ENTRY COLOR="white">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>ECRASEMENT</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_ecrasement.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
 												</xsl:otherwise>
 									</xsl:choose>
 											<xsl:choose>
-												<xsl:when test="/section/section[1]/section[1]/body/p = 'ELECTRIQUE'">
+												<xsl:when test="/section/meta/attribute[@name='spie-risks']/value = 'ECRASEMENT PAR ENGRENAGE'">
 													<ENTRY COLOR="spie green">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>ECRASEMENT PAR ENGRENAGE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_ecrasement_par_engrenage.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
@@ -622,21 +621,422 @@
 												<xsl:otherwise>
 													<ENTRY COLOR="white">
 														<PARAGRAPH PARASTYLE="risque_caption">
-															<RICHTEXT>ELECTRIQUE</RICHTEXT>
+															<RICHTEXT>ECRASEMENT PAR ENGRENAGE</RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<RICHTEXT> </RICHTEXT>
 														</PARAGRAPH>
 														<PARAGRAPH PARASTYLE="risque_caption">
 															<INLINEBOX>
-																<CONTENT>file:icon_electrique.png</CONTENT>
+																<CONTENT>file:icon_ecrasement_par_engrenage.png</CONTENT>
 															</INLINEBOX>
 														</PARAGRAPH>
 													</ENTRY>
 												</xsl:otherwise>
 											</xsl:choose>
-										
-									<!--</xsl:for-each>	-->
+								</TROW>
+								<TROW>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'PRODUIT NOCIF'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>PRODUIT NOCIF</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_produit_nocif.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'BRUIT IMPORTANT'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>BRUIT IMPORTANT</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_bruit_important.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'ENTRAINEMENT MECANIQUE'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>ENTRAINEMENT MECANIQUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_entrainement_mecanique.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'VEHICULES DE MANUTENTION'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>VEHICULES DE MANUTENTION</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_vehicules_de_manutention.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'LEVAGE'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>LEVAGE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_levage.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'BIOLOGIQUE'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>BIOLOGIQUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_biologique.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'CHAMP MAGNETIQUE'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>CHAMP MAGNETIQUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_champ_magnetique.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'INTERDIT AUX PERSONNES PORTANT UN PACEMAKER'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>INTERDIT AUX PERSONNES PORTANT UN PACEMAKER</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_interdit_pacemaker.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+								</TROW>
+								<TROW>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'ATEX'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>ATEX</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_atex.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'RISQUE DE CHUTES'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>RISQUE DE CHUTES</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_risque_de_chutes.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'CONSIGNATION'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>CONSIGNATION</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_consignation.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'DANGEUREUX POUR L ENVIRONNEMENT'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>DANGEUREUX POUR L’ENVIRONNEMENT</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_dangereux_environnement.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'GAZ SOUS PRESSION'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>GAZ SOUS PRESSION</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_gaz_sous_pression.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'TOXICITE AIGUE'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>TOXICITE AIGUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_toxicite_aigue.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<xsl:if test="/section/meta/attribute[@name='spie-risks']/value = 'PROJECTION DE PARTICULES'">
+											<xsl:attribute name="COLOR" select="'spie green'"/>
+										</xsl:if>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>PROJECTION DE PARTICULES</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_protection_de_particules.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+									</ENTRY>
+								</TROW>
+								<TROW>
+									<ENTRY COLOR="spie_red" COLSPAN="8">
+										<PARAGRAPH PARASTYLE="Table Header">
+											<RICHTEXT>EPI</RICHTEXT>
+										</PARAGRAPH>
+									</ENTRY>
+								</TROW>
+								<TROW>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>GILET ORANGE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_gilet_orange.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>VETEMENT</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_vetement.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>CASQUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_casque.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>CHAUSSURES DE SECURITE ET ESD</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_chaussures_de_securite.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>GANTS</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_gants.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>AUDITIVE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_auditive.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>LUNETTES</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_lunettes.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>HARNAIS LONGE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_harnais_longe.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+								</TROW>
+								<TROW>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>MASQUE</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_masque.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>CASQUE HYDRA</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_casque_hydra.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
+									<ENTRY>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT>GANTS ELEC</RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<RICHTEXT> </RICHTEXT>
+										</PARAGRAPH>
+										<PARAGRAPH PARASTYLE="risque_caption">
+											<INLINEBOX>
+												<CONTENT>file:spie-img/icon_epi_gants_elec.png</CONTENT>
+											</INLINEBOX>
+										</PARAGRAPH>
+									</ENTRY>
 								</TROW>
 							</TBODY>
 						</INLINETABLE>
