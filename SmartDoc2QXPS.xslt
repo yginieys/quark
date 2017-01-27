@@ -356,8 +356,9 @@
 					</STATICCONTENT>
 					<STORY>
 						<PARAGRAPH PARASTYLE="section_heading">
-							<RICHTEXT>Sécurité</RICHTEXT>
+							<RICHTEXT><xsl:value-of select="/section/section[1]/title" /></RICHTEXT>
 						</PARAGRAPH>
+						<xsl:apply-templates select="/section/section[1]/body" mode="section"/>
 					<INLINETABLE TABLESTYLEREF="inline" BREAKROWACROSSPAGES="TRUE">
 							<COLGROUP>
 								<TCOL COLINDEX="1" WIDTH="12%"/>
