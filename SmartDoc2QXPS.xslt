@@ -1114,15 +1114,42 @@
 		</PROJECT>
 	</xsl:template>
 
-	<xsl:template match="region[@type='box']/ul" mode="section">
+	<xsl:template match="region[@type='caces-nacelles'] | region[@type='hab-electrique'] | region[@type='caces-chariots']" mode="section">
+		<xsl:param name="anchorid"/>
+		<xsl:call-template name="anchor-with-para-region">
+			<xsl:with-param name="elmid" select="$anchorid"/>
+		</xsl:call-template>
+		<xsl:element name="PARAGRAPH">
+			<xsl:attribute name="PARASTYLE">
+				<xsl:value-of select="$para.style.InlineBox"/>
+			</xsl:attribute>
+			<xsl:call-template name="AddParaLeftIndent"></xsl:call-template>	
+				<xsl:apply-templates select="meta" mode="indexStart"/>				
+				<xsl:apply-templates mode="section"/>
+				<xsl:apply-templates select="meta" mode="indexEnd"/> 
+		</xsl:element>
+	</xsl:template>
+	<xsl:template match="region[@type='caces-nacelles']/p[@type='region-title']" mode="section">
+		<xsl:element name="INLINEBOX">
+			<FRAME COLOR="Black" GAPCOLOR="none" OPACITY="100%" SHADE="100%" STYLE="Solid" WIDTH="1"/>
+			<TEXTATTRIBUTE>
+				<INSET ALLEDGES="5" MULTIPLEINSETS="false"/>
+			</TEXTATTRIBUTE>
+			<PARAGRAPH PARASTYLE="red_title">
+				<FORMAT ALIGNMENT="CENTERED"/>
+				<RICHTEXT><xsl:value-of select="."/></RICHTEXT>
+			</PARAGRAPH>
+		</xsl:element>
+	</xsl:template>
+	<xsl:template match="region[@type='caces-nacelles']/ul" mode="section">
 		<xsl:variable name="CAT1A" select="li/p='CAT 1A'"/>
-                    <xsl:variable name="CAT2A" select="li/p='CAT 2A'"/>
-                    <xsl:variable name="CAT3A" select="li/p='CAT 3A'"/>
-                    <xsl:variable name="CAT1B" select="li/p='CAT 1B'"/>
-                    <xsl:variable name="CAT2B" select="li/p='CAT 2B'"/>
-                    <xsl:variable name="CAT3B" select="li/p='CAT 3B'"/>
-                    <xsl:variable name="HIGHTLIGH_COLOR" select="'spie green'"/>
-                    <xsl:variable name="HIGHTLIGH_SHADE" select="'50'"/>
+        <xsl:variable name="CAT2A" select="li/p='CAT 2A'"/>
+        <xsl:variable name="CAT3A" select="li/p='CAT 3A'"/>
+        <xsl:variable name="CAT1B" select="li/p='CAT 1B'"/>
+        <xsl:variable name="CAT2B" select="li/p='CAT 2B'"/>
+        <xsl:variable name="CAT3B" select="li/p='CAT 3B'"/>
+        <xsl:variable name="HIGHTLIGH_COLOR" select="'spie green'"/>
+        <xsl:variable name="HIGHTLIGH_SHADE" select="'50'"/>
         <PARAGRAPH>
 		<INLINETABLE TABLESTYLEREF="nogrid" BREAKROWACROSSPAGES="TRUE">
 							<COLGROUP>
@@ -1379,6 +1406,42 @@
 							</TBODY>
 						</INLINETABLE>
 					</PARAGRAPH>
+	</xsl:template>
+
+	<xsl:template match="region[@type='hab-electrique']/p[@type='region-title']" mode="section">
+		<xsl:element name="INLINEBOX">
+			<FRAME COLOR="Black" GAPCOLOR="none" OPACITY="100%" SHADE="100%" STYLE="Solid" WIDTH="1"/>
+			<TEXTATTRIBUTE>
+				<INSET ALLEDGES="5" MULTIPLEINSETS="false"/>
+			</TEXTATTRIBUTE>
+			<PARAGRAPH PARASTYLE="red_title">
+				<FORMAT ALIGNMENT="CENTERED"/>
+				<RICHTEXT><xsl:value-of select="."/></RICHTEXT>
+			</PARAGRAPH>
+		</xsl:element>
+		<PARAGRAPH>
+			<INLINEBOX>
+				<CONTENT>file:spie-img/tableau_habilitation_electrique.jpg</CONTENT>
+			</INLINEBOX>
+		</PARAGRAPH>
+	</xsl:template>
+
+	<xsl:template match="region[@type='caces-chariots']/p[@type='region-title']" mode="section">
+		<xsl:element name="INLINEBOX">
+			<FRAME COLOR="Black" GAPCOLOR="none" OPACITY="100%" SHADE="100%" STYLE="Solid" WIDTH="1"/>
+			<TEXTATTRIBUTE>
+				<INSET ALLEDGES="5" MULTIPLEINSETS="false"/>
+			</TEXTATTRIBUTE>
+			<PARAGRAPH PARASTYLE="red_title">
+				<FORMAT ALIGNMENT="CENTERED"/>
+				<RICHTEXT><xsl:value-of select="."/></RICHTEXT>
+			</PARAGRAPH>
+		</xsl:element>
+		<PARAGRAPH>
+			<INLINEBOX>
+				<CONTENT>file:spie-img/tableau_chariots.jpg</CONTENT>
+			</INLINEBOX>
+		</PARAGRAPH>
 	</xsl:template>
 	
 </xsl:stylesheet>
